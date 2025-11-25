@@ -26,9 +26,9 @@
 	}
 
 	h1 {
-		font-size: 32px;
+		font-size: 28px;
 		font-weight: bold;
-		animation: rainbow-text 3s linear infinite; /* 3초 주기, 선형 반복 */
+		animation: rainbow-text 5s linear infinite; /* 3초 주기, 선형 반복 */
 	}
     .lotto-container { margin-bottom:5px; display:flex; justify-content:center; gap:10px; flex-wrap:nowrap; overflow-x:auto; padding-bottom:5px; min-height:50px; }
 	
@@ -94,7 +94,7 @@ let timerId; // 시계 타이머 ID
 
 
 // 하단 번호 생성
-for (let i=1; i<=45; i++){
+for (let i=1; i<=20; i++){
     const numDiv = document.createElement('div');
     numDiv.textContent = i;
     numDiv.classList.add('number');
@@ -156,7 +156,7 @@ function toggleBallColor(num){
 autoBtn.addEventListener('click', ()=>{
 	selectedNumbers=[];
     while(selectedNumbers.length<6){
-        const n=Math.floor(Math.random()*45)+1;
+        const n=Math.floor(Math.random()*20)+1;
         if(!selectedNumbers.includes(n)) selectedNumbers.push(n);
     }
 	document.querySelectorAll('.number').forEach(num=>num.classList.remove('selected'));
